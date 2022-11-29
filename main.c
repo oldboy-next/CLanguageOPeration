@@ -1,10 +1,10 @@
+/*习题一 第3小题 p15页*/
 #include<stdio.h>
-
-//运行框架
-int main()
+//程序入口
+int main() 
 {
-	//use githup
-	printf("\nHello World!\tRun Success!\n");
-	
+	printf("*************************************\n\n");
+	printf("Hello,World!\n\n");
+	printf("*************************************");
 	return 0;
 }
