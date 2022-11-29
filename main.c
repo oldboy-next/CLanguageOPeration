@@ -1,18 +1,16 @@
-#include<stdio.h>
-
+//习题二 第2小题  p45页
+#include <stdio.h>
+//求绝对值
+float Abs(float value) 
+{
+	return value > 0 ? value : value * -1.0;
+}
+//程序入口
 int main() 
 {
-	char a, b;
-
-	printf("输入两个字符\n");
-	scanf("%c%c", &a, &b);
-
-	printf("参数1：%c \n参数2：%c\n", a, b);
-
-	printf("-----交换位置-----\n");
-	char temp = a;
-	a = b;
-	b = temp;
-	printf("参数1：%c\n参数2：%c\n", a, b);
+	float inputValue;
+	printf("请输入一个实数n\n");
+	scanf("%f", &inputValue);
+	printf("n的绝对值 = %.2f\n",Abs(inputValue));
 	return 0;
 }
