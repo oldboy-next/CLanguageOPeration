@@ -1,25 +1,18 @@
-/*P33 练一练*/
-#include <stdio.h>
-//圆周率 宏定义
-#define PI 3.14
-//计算次方
-float Power(float sou,int multi)
+#include<stdio.h>
+
+int main() 
 {
-	float result = 1;
-	for (int i = 0; i < multi; i++)
-	{
-		result *= sou;
-	}
-	return result;
-}
-//程序入口
-int main()
-{
-	float rVolume,radius;
-	printf("请输入球的半径_\n");
-	scanf("%f", &radius);
-	printf("球的半径 = %0.2f\n", radius);
-	rVolume = 4 / 3 * (float)PI * Power(radius, 3);
-	printf("球的体积V = %0.2f\n", rVolume);
+	char a, b;
+
+	printf("输入两个字符\n");
+	scanf("%c%c", &a, &b);
+
+	printf("参数1：%c \n参数2：%c\n", a, b);
+
+	printf("-----交换位置-----\n");
+	char temp = a;
+	a = b;
+	b = temp;
+	printf("参数1：%c\n参数2：%c\n", a, b);
 	return 0;
 }
