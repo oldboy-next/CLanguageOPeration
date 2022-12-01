@@ -1,30 +1,30 @@
 #include<stdio.h>
-
-int fib(int n);
 //运行框架
 int main() 
 {
-	int num;
-	printf("输入一个整数\n");
-	scanf("%d",&num);
-	printf("fib(n) = %d\n",fib(num));
+	int num, changed = 0;
+	int two = 2;
+tem:
+	printf("请输入一个整数\n");
+	scanf("%d", &num);
 
+	for (int i = 2; i < num / 2; i++)
+	{
+		if (num % i == 0) 
+		{
+			changed++;
+			break;
+		}
+	}
+	if (changed == 0)
+		printf("return 1\n");
+	else
+		printf("return 0\n");
+	two--;
+	printf("\n\n");
+	if (two != 0)
+		goto tem;
 	return 0;
 }
-int fib(int n)
-{
-	if (n <= 0)
-	{
-		printf("数值%d较小\n",n);
-		return 0;
-	}
-	else if(n > 40)
-	{
-		printf("数值%d过大\n",n);
-		return 0;
-	}	
-	if (n == 1 || n == 2)
-		return 1;
-	return fib(n - 1) + fib(n - 2);
-}
+
 
