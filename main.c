@@ -1,35 +1,30 @@
 #include<stdio.h>
-#define COUNT 10
+
+int fib(int n);
 //运行框架
-int main() {
-	int vector2[COUNT][COUNT];
-	// 赋值为1
-	for (int i = 0; i < COUNT; i++) {
-		for (int j = 0; j < COUNT; j++) {
-			vector2[i][j] = 1;
-		}
-	}
-	//
-	for (int i = 1; i < COUNT; i++) {
-		//printf("i = %d\n ",i);
-		for (int j = 1; j < i; j++) {
-			vector2[i][j] = vector2[i - 1][j] + vector2[i - 1][j - 1];
-			//printf("j = %d\n",j);
-		}
-	}
-	//格式化输出
-	for (int i = 0; i < COUNT; i++) {
-		for (int k = 0; k < 50 - 5 * i / 2; k++) {
-			printf("_");
-		}
-		for (int j = 0; j <= i; j++) {
-			printf("%5d ", vector2[i][j]);
-		}
-		printf("\n");
-	}
-	for (int i = 0; i < 90; i++) {
-		printf("_");
-	}
+int main() 
+{
+	int num;
+	printf("输入一个整数\n");
+	scanf("%d",&num);
+	printf("fib(n) = %d\n",fib(num));
+
 	return 0;
+}
+int fib(int n)
+{
+	if (n <= 0)
+	{
+		printf("数值%d较小\n",n);
+		return 0;
+	}
+	else if(n > 40)
+	{
+		printf("数值%d过大\n",n);
+		return 0;
+	}	
+	if (n == 1 || n == 2)
+		return 1;
+	return fib(n - 1) + fib(n - 2);
 }
 
