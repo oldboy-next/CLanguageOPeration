@@ -1,21 +1,59 @@
-//P88 习题四 2
+//P88 习题四 4
 #include<stdio.h>
-#include<math.h>
+#define COUNT 10
 
+//总体安排
+void Format(int array[], int typed) 
+{
+	switch (typed) {
+		case 1:
+			for (int i = 0; i < COUNT; i++) {
+				if (array[i] > 0) { //正数
+					printf("%d ", array[i]);
+				}
+			}
+			break;
+		case -1:
+			for (int i = 0; i < COUNT; i++) {
+				if (array[i] < 0) { //负数
+					printf("%d ", array[i]);
+				}
+			}
+			break;
+		default:
+			printf("\n\n错误!typed=1或-1");
+			break;
+	}
+}
 //入口函数
-int main() {
+int main()
+{
 
-	printf("从5到100可以被5整除的有：\n");
-	for (int i = 5; i <= 100; i++) {
-		if (i % 5 == 0) {
-			printf("%d ", i);
-		}
+	//存储数值
+	int lists[COUNT];
+	printf("输入%d个整数\n", COUNT);
+	for (int i = 0; i < COUNT; i++)
+	{
+		scanf("%d", &lists[i]);
 	}
-	printf("\n\n从5到100可以被7整除的有：\n");
-	for (int i = 7; i <= 100; i++) {
-		if (i % 7 == 0) {
-			printf("%d ", i);
-		}
+	//分类
+	int just = 0, load = 0, zero = 0;
+	for (int i = 0; i < COUNT; i++) 
+	{
+		if (lists[i] > 0)
+			just++;
+		if (lists[i] < 0)
+			load++;
+		if (lists[i] == 0)
+			zero++;
 	}
+	//格式化输出 正数
+	printf("\n正数有%d个：",just);
+	Format(lists, 1);
+	//负数
+	printf("\n\n负数有%d个：",load);
+	Format(lists, -1);
+	//零
+	printf("\n\n零有%d个。",zero);
 	return 0;
 }
