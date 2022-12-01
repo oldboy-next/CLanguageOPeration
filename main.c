@@ -1,29 +1,21 @@
-//P66习题三 4
+//P88 习题四 2
 #include<stdio.h>
 #include<math.h>
 
 //入口函数
 int main() {
 
-	float a, b, c; //边
-	printf("输入三条边组成三角形以空格开_\n");
-	scanf("%f%f%f", &a, &b, &c);
-	printf("a = %0.2f b = %0.2f c = %0.2f\n", a, b, c);
-
-	if (a + b > c && a + c > b && b + c > a) {
-		printf("可以组成三角行\n");
-		float peri = a + b + c;
-
-		float temp = peri / 2.0f;
-		float area = sqrt(temp * (temp - a) * (temp - b) * (temp - c)); //面积
-		
-		printf("三角形的周长 = %0.2f\n三角形的面积 = %0.2f",peri,area);
-
+	printf("从5到100可以被5整除的有：\n");
+	for (int i = 5; i <= 100; i++) {
+		if (i % 5 == 0) {
+			printf("%d ", i);
+		}
 	}
-	else
-	{
-		printf("不能组成三角形\n");
+	printf("\n\n从5到100可以被7整除的有：\n");
+	for (int i = 7; i <= 100; i++) {
+		if (i % 7 == 0) {
+			printf("%d ", i);
+		}
 	}
-
 	return 0;
 }
