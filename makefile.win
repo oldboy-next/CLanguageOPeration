@@ -27,7 +27,7 @@ $(BIN): $(OBJ)
 	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
 
 main.o: main.c
-	$(CC) -c E:/Develop/Dev++/Citems/code_task/main.c -o main.o $(CFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+	$(CC) -c F:/Develop/Dev++/Citem/CLanguageOPeration/main.c -o main.o $(CFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
 
 code_task_private.res: code_task_private.rc 
 	$(WINDRES) -i code_task_private.rc --input-format=rc -o code_task_private.res -O coff 
