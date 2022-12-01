@@ -1,29 +1,17 @@
 #include<stdio.h>
-//运行框架
-int main() 
-{
-	int num, changed = 0;
-	int two = 2;
-tem:
-	printf("请输入一个整数\n");
-	scanf("%d", &num);
+#include<string.h>
 
-	for (int i = 2; i < num / 2; i++)
-	{
-		if (num % i == 0) 
-		{
-			changed++;
-			break;
-		}
-	}
-	if (changed == 0)
-		printf("return 1\n");
-	else
-		printf("return 0\n");
-	two--;
-	printf("\n\n");
-	if (two != 0)
-		goto tem;
+//运行框架
+int main() {
+
+	char str1[20], str2[20];
+	printf("请输入字符串str1_\n");
+	scanf("%s", &str1);
+	printf("请输入字符串str2_\n");
+	scanf("%s", &str2);
+	strcat(str1, str2);
+	printf("\nlink str1: %s\n", str1);
+
 	return 0;
 }
 
