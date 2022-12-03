@@ -1,39 +1,31 @@
 #include<stdio.h>
-#include<string.h>
-char* linkString(char* x, char* y);
+int primeNumber(int n);
 //运行框架
 int main() 
 {
-
-	//输入值
-	char str1[20], str2[20];
-	printf("请输入字符串str1_\n");
-	scanf("%s", str1);
-	printf("请输入字符串str2_\n");
-	scanf("%s", str2);
-	//连接
-	char* linkStr = linkString(str1, str2);
-	printf("\nlink String: %s\n", linkStr);
-	//长度
-	printf("\nLink String Lenght %d\n", (int)strlen(linkStr));
-	return 0;
+	int num;
+	int two = 2;
+	tem:
+		printf("请输入一个整数\n");
+		scanf("%d", &num);
+		two--;
+		printf("return %d\n",primeNumber(num));
+		printf("\n\n");
+		if (two != 0)
+			goto tem;
+		return 0;
 }
-char* linkString(char* x, char* y) 
+int primeNumber(int n)
 {
-	//hello
-	static char temps[100];
-	int index;
-	for (int i = 0; i < (int)strlen(x); i++)
+	for (int i = 2; i < n / 2; i++)
 	{
-		if (x[i] == '\0') break;
-		temps[i] = x[i];
-		index = i + 1;
+		if (n % i == 0) 
+		{
+			return 0;
+			break;
+		}
 	}
-	//world
-	for (int i = 0; i < (int)strlen(y); i++) 
-	{
-		if (y[i] == '\0')break;
-		temps[index + i] = y[i];
-	}
-	return temps;
+	return 1;
 }
+
+
